@@ -7,7 +7,7 @@ export const FETCHING_DATA_FAILURE = 'FETCHING_DATA_FAILURE';
 export const fetchData = (days) => dispatch => {
     dispatch({ type: FETCHING_DATA_START});
     axios
-    .get('https://jobs.github.com/positions?description=python&location=new+york')
+    .get('https://pokeapi.co/api/v2/pokemon/')
     .then(res => {
         console.log(res.data);
         dispatch({ type: FETCHING_DATA_SUCCESS, payload: {data: res.data, days: days}});
